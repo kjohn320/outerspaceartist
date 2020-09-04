@@ -1,0 +1,32 @@
+<!DOCTYPE html><html>
+<head>
+    <script src="//use.typekit.net/abi7fvp.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="//use.fontawesome.com/ca8a63ce47.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/canvas2image.js') }}"></script>
+    {% block header %}    
+
+      {% endblock header %}
+</head>
+<body>
+
+        <div class="container-fluid padding-short main-wrapper">
+            <div class="section left col-xs-3">
+                <div class="container small-section">
+                    <div class="col-12-xs">
+                      <h1>Outerspace Artist</h1>
+                      <p class="text">art by paria almasi <br>web design by izzy johnson </p>
+                    </div>
+                  </div>
+                {% block content %}{% endblock %}
+            </div>
+            </div>
+
+</body>
+
+</html>

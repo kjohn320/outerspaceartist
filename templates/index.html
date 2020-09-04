@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block html_attribs %} lang="en"{% endblock %}
+{% block title %}Outerspace Artist{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="col-12-xs">
+      <a id ="galaxy" href={{ url_for('galaxy_creator') }} >Create Galaxy</p>
+    </div>
+  </div>
+{% endblock %}

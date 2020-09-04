@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block html_attribs %} lang="en"{% endblock %}
+{% block title %}S3 Object List{% endblock %}
+
+{% block content %}
+<div class="small-section">
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-light btn-sm mt-1 py-0" id="download">download</button>
+            <button type="button" class="btn btn-light btn-sm mt-1 py-0" id="clear">clear</button>
+            <button type="button" class="btn btn-light btn-sm mt-1 py-0" id="send2space">send 2
+                space</button>
+                <div class="modal" tabindex="-1" id = "myModal" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-dark">Send to Space</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form method="POST" action="{{ url_for('uploadToSpace') }}">
+                        <div class="modal-body">
+                           
+                                <div class="form-group">
+                                    <label for="username" class="text-dark">Your Nickname</label>
+                                    <input type="text" class="form-control" name="username" placeholder="izcatdog" required>
+                                    <label for="galaxyName" class="text-dark">Name your Artwork</label>
+                                    <input type="text" class="form-control" name="galaxyname" aria-describedby="galazyHelp"
+                                        placeholder="Galaxy Francis" required>
+                                    <small id="galaxyHelp" class="form-text text-danger">Your galaxy picture will be shared with the
+                                        world</small>
+                                </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-primary">blast off!</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">NVM!</button>
+                        </div>
+                    </form>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+    </div>
+
+    <div class="flex-row" style="background:black;">
+        <div class="col-12">
+            <nav class="nav nav-fill p-2" style="background:black;">
+                <li class="nav-item">
+                    <img class="mini-img" src="{{ url_for('static', filename='images/moon1.png') }}" id="img1"
+                        width="32" height="32" />
+                </li>
+                <li class="nav-item">
+                    <img class="mini-img" src="{{ url_for('static', filename='images/moon2.png') }}" id="img2"
+                        width="32" height="32" />
+                </li>
+                <li class="nav-item">
+                    <img class="mini-img" src="{{ url_for('static', filename='images/moon3.png') }}" id="img3"
+                        width="32" height="32" />
+                </li>
+                <li class="nav-item">
+                    <img class="mini-img" src="{{ url_for('static', filename='images/star1.png') }}" id="img4"
+                        width="32" height="32" />
+                </li>
+                <li class="nav-item">
+                    <img class="mini-img" src="{{ url_for('static', filename='images/star2.png') }}" id="img5"
+                        width="32" height="32" />
+                </li>
+                <li class="nav-item">
+                    <img class="mini-img" src="{{ url_for('static', filename='images/star3.png') }}" id="img6"
+                        width="32" height="32" />
+                </li>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="big-section" id="big-section">
+
+    <canvas style="width:100%; background:black;" id="cvs"></canvas>
+
+</div>
+<div class="xsmall-section">
+    <div class="row">
+        <div class="col-12">
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+crossorigin="anonymous"></script> 
+<script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+{% endblock %}
